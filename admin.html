@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Loja de Vestuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .stat-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .stat-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Painel do Administrador</h1>
+    </header>
+
+    <div class="container">
+        <h2>Estatísticas de Vendas</h2>
+        <div class="stats">
+            <?php
+            include 'db_connect.php';
+
+            // Total de vendas
+            $stmt = $conn->query("SELECT SUM(total) AS total_vendas FROM vendas");
+            $total_vendas = $stmt->fetch(PDO::FETCH_ASSOC)['total_vendas'] ?? 0;
+
+            // Total de produtos vendidos
+            $stmt = $conn->query("SELECT SUM(quantidade) AS total_produtos FROM vendas");
+            $total_produtos = $stmt->fetch(PDO::FETCH_ASSOC)['total_produtos'] ?? 0;
+
+            // Total de produtos cadastrados
+            $stmt = $conn->query("SELECT COUNT(*) AS total_produtos_cadastrados FROM produtos");
+            $total_produtos_cadastrados = $stmt->fetch(PDO::FETCH_ASSOC)['total_produtos_cadastrados'] ?? 0;
+            ?>
+
+            <div class="stat-card">
+                <h3>R$ <?php echo number_format($total_vendas, 2, ',', '.'); ?></h3>
+                <p>Vendas Totais</p>
+            </div>
+            <div class="stat-card">
+                <h3><?php echo $total_produtos; ?></h3>
+                <p>Produtos Vendidos</p>
+            </div>
+            <div class="stat-card">
+                <h3> <?php echo $total_produtos_cadastrados; ?></h3>
+                <p>Produtos Cadastrados</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <h2>Ações</h2>
+            <button onclick="window.location.href='adicionar_produto.php'">Adicionar Produto</button>
+            <button onclick="window.location.href='editar_produto.php'">Editar Produto</button>
+            <button onclick="window.location.href='gerenciar_promocoes.php'">Gerenciar Promoções</button>
+        </div>
+    </div>
+</body>
+</html>

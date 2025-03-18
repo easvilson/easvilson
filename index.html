@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easvilson Business</title>
+    <link rel="stylesheet"  href="adm.html">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Fundo azul claro */
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .announcement-bar {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement-bar a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .announcement-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .announcement-content {
+            display: flex;
+            animation: slide 35s linear infinite;
+        }
+
+        .announcement-item {
+            min-width: 100%;
+            text-align: center;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .product-card button {
+            background-color: #002fff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .product-card button:hover {
+            background-color: #5ae709;
+        }
+
+        .newsletter {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 300px;
+            max-width: 80%;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .newsletter button {
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .newsletter button:hover {
+            background-color: #e6b800;
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-logo img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="1696424053476.jpg" alt="Logo da Empresa">
+        <h1>Sejam Bem-Vindo A Nossa Loja de Vestuário Online</h1>
+    </header>
+
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="announcement-item">
+                <a href="#produto1">Aqui você produtos de qualidade ao melhor preço para todos os gosto e tamanhos!</a>
+            </div>
+            <div class="announcement-item">
+                <a href="#produto2">Promoção: Calça Jeans com 40% de desconto!</a>
+            </div>
+            <div class="announcement-item">
+                <a href="#produto3">Promoção: Vestido Elegante com 30% de desconto!</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div>
+            <a href="#home">Início</a>
+            <a href="#products">Produtos</a>
+            <a href="#contact">Contato</a>
+        </div>
+        <div>
+            <a href="admin.html">Administração</a>
+        </div>
+    </nav>
+
+    <div class="container" id="products">
+        <h2>Produtos em Destaque</h2>
+        <div class="products">
+            <div class="product-card" id="produto1">
+                <img src="c:\Users\SAMUEL\Pictures\calça.jpg" alt="Produto 1">
+                <h3>Calças Jeans Jovens </h3>
+                <p>13.000,00 AKZ</p>
+                <button>Comprar </button>
+            </div>
+            <div class="product-card" id="produto2">
+                <img src="c:\Users\SAMUEL\Pictures\download.jfif" alt="Produto 2">
+                <h3>Calça Jeans Adultos</h3>
+                <p>13.OOO,00 AKZ</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-card" id="produto3">
+                <img src="c:\Users\SAMUEL\Pictures\watch.jpg" alt="Produto 3">
+                <h3>Vestido Elegante</h3>
+                <p>5.000,00 AKZ</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\SAMUEL\Pictures\IMG_3314.jpg" alt="Produto 4">
+                <h3>T-SHIRT DESPORTIVA</h3>
+                <p>8.000,00 AKZ</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\camisapolo.jpg" alt="Produto 5">
+                <h3>Camisa Social</h3>
+                <p>12.500,00 AKZ</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\cinto.jpg" alt="Produto 5">
+                <h3>Cinto</h3>
+                <p>2.300,00 AKZ</p>
+                <a href="https://wa.me/244929064398" target="_blank">
+                    <button>Comprar</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\air force.jpg" alt="Produto 5">
+                <h3>Nike Air Force</h3>
+                <p>21.000,00 AKZ</p>
+                <a href="https://wa.me/244929064398" target="_blank">
+                    <button>Comprar</button>
+                </a>
+                
+                
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\smart.jpg" alt="Produto 5">
+                <h3>SmarthWatch T900</h3>
+                <p>12.000,00 AKZ</p>
+                <a href="https://wa.me/244929064398" target="_blank">
+                    <button>Comprar</button>
+                    
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\timberland.jpg" alt="Produto 5">
+                <h3>Tênis</h3>
+                <p>20.000,00 AKZ</p>
+                <a href="https://wa.me/c/244929064398" target="_blank">
+                    <button>Comprar</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="c:\Users\SAMUEL\Pictures\casaco napa.jpg" alt="Produto 6">
+                <h3>Jaqueta de Napa</h3>
+                <p>15.000,00 AKZ</p>
+                <a href="https://wa.me/c/244929064398" target="_blank">
+                    <button>Comprar</button>
+                    
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter" id="contact">
+        <h2>Receba Promoções Exclusivas</h2>
+        <p>Insira seu e-mail e contato para receber nossas promoções:</p>
+        <input type="email" placeholder="Seu e-mail">
+        <br>
+        <input type="text" placeholder="Seu contato">
+        <br>
+        <button>Inscrever-se</button>
+    </div>
+
+    <footer>
+        <p>Siga-nos nas redes sociais:</p>
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/exace_easvilson?utm_source=qr&igsh=emNjdHJ6bHJha2R0" target="_blank">Instagram</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <p> 
+            <a href="https://twitter.com" target="_blank">Localização: Cunene-Ondjiva, Bairro: Castilhos</a>
+            </p>
+        <p>&copy; 2025 Loja de Vestuário. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/244929064398" class="whatsapp-logo" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</body>
+</html>
